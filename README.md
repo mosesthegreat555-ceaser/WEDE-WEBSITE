@@ -6,7 +6,7 @@ Student Number: ST10533051
 Module: WEDE5020 — Web Development
 Programme: Higher Certificate in Mobile Application and Web Development
 Institution: The IIE — Rosebank College
-Repository: https://github.com/mosesthegreat555-ceaser/assignment-step-1
+Repository: https://github.com/mosesthegreat555-ceaser/WEDE-WEBSITE
 
 ---
 
@@ -149,7 +149,7 @@ writes the current year into the footer.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mosesthegreat555-ceaser/assignment-step-1.git
+   git clone https://github.com/mosesthegreat555-ceaser/WEDE-WEBSITE.git
    ```
 2. Open the project folder in Visual Studio Code.
 3. Open `index.html` in a web browser, or use the Live Server extension in VS Code.
