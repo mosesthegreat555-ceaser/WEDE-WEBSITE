@@ -85,8 +85,6 @@ Netlify is recommended because the project uses static HTML forms marked `data-n
 
 # 6. GitHub repository and descriptive commits
 
-> The ZIP contains website files, not a live GitHub commit history. The original uploaded repository URL has *not* been modified or pushed by creating this ZIP.
-
 From the website folder in the VS Code terminal, if upgrading an existing clone:
 
 ```bash
