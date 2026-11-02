@@ -3,17 +3,17 @@
 *Module:* WEDE5020 — Web Development  
 *Course:* Higher Certificate in Mobile Application and Web Development  
 *Institution:* IIE Rosebank College  
-*Original Part 2 author information (retained from uploaded project):* Lethabo Mmako — ST10533051  
+*Original  author information :* Lethabo Mmako — ST10533051  
 *Project:* Help Me Up — Grade 12 learner guidance NGO  
 *Version:* Part 3 — 29 October 2026  
 *Original repository noted in Part 2:* https://github.com/mosesthegreat555-ceaser/assignment-step-1  
-**Live website:** — add the actual public URL after publishing.
+*Live website:* — add the actual public URL after publishing.
 
 # 1. Project overview
 
 Help Me Up (HMU) is a South African non-profit website concept supporting Grade 12 learners as they make decisions about universities, colleges, bursaries, careers and opportunities after matric. The Part 3 upgrade builds directly on the uploaded Part 2 HTML/CSS website and preserves its blue/green look, brand, site structure and educational mission.
 
-**Audience:** learners, parents, schools, volunteers and supporters. The website is designed to offer information, searchable programme descriptions, enquiry assistance and contact routes. The illustrations are original project SVG assets. Programme content is descriptive and does not guarantee funding, acceptance, workshop availability or individual services.
+*Audience:* learners, parents, schools, volunteers and supporters. The website is designed to offer information, searchable programme descriptions, enquiry assistance and contact routes. The illustrations are original project SVG assets. Programme content is descriptive and does not guarantee funding, acceptance, workshop availability or individual services.
 
 # 2. Website pages
 
