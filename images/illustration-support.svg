@@ -1,0 +1,15 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="supportTitle">
+  <title id="supportTitle">Illustration of two hands reaching toward each other in support</title>
+  <rect width="400" height="300" rx="24" fill="#ebfff5"/>
+  <circle cx="200" cy="150" r="110" fill="#ffffff"/>
+  <!-- left arm -->
+  <path d="M90 190 C120 170 150 165 180 158" stroke="#0d5ea8" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <circle cx="185" cy="156" r="14" fill="#0d5ea8"/>
+  <!-- right arm -->
+  <path d="M310 190 C280 170 250 165 220 158" stroke="#2cb67d" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <circle cx="215" cy="156" r="14" fill="#2cb67d"/>
+  <!-- small stars -->
+  <circle cx="140" cy="100" r="5" fill="#0d5ea8" opacity="0.5"/>
+  <circle cx="260" cy="95" r="5" fill="#2cb67d" opacity="0.5"/>
+  <circle cx="200" cy="80" r="6" fill="#1d8e63" opacity="0.6"/>
+</svg>

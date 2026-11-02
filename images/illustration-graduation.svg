@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="gradTitle">
+  <title id="gradTitle">Illustration of a graduate holding a certificate beside an open book</title>
+  <rect width="400" height="300" rx="24" fill="#ffffff" opacity="0"/>
+  <circle cx="200" cy="150" r="130" fill="#ffffff" opacity="0.08"/>
+  <!-- open book -->
+  <path d="M70 210 L200 190 L330 210 L330 230 L200 210 L70 230 Z" fill="#ffffff"/>
+  <path d="M200 190 L200 210 L200 210" fill="none"/>
+  <path d="M70 205 C120 195 170 195 200 205 C230 195 280 195 330 205 L330 225 C280 215 230 215 200 225 C170 215 120 215 70 225 Z" fill="#2cb67d"/>
+  <!-- graduation cap -->
+  <g transform="translate(200,110)">
+    <polygon points="0,-10 60,10 0,30 -60,10" fill="#ffffff"/>
+    <polygon points="0,-10 60,10 0,30 -60,10" fill="none" stroke="#0a467f" stroke-width="2"/>
+    <rect x="-14" y="26" width="28" height="18" rx="4" fill="#ffffff"/>
+    <line x1="55" y1="12" x2="55" y2="45" stroke="#0a467f" stroke-width="2"/>
+    <circle cx="55" cy="50" r="4" fill="#0a467f"/>
+  </g>
+  <!-- certificate -->
+  <g transform="translate(120,150)">
+    <rect x="-30" y="-20" width="60" height="42" rx="4" fill="#ffffff"/>
+    <line x1="-18" y1="-5" x2="18" y2="-5" stroke="#0d5ea8" stroke-width="3"/>
+    <line x1="-18" y1="4" x2="18" y2="4" stroke="#0d5ea8" stroke-width="3"/>
+    <line x1="-18" y1="13" x2="6" y2="13" stroke="#0d5ea8" stroke-width="3"/>
+    <circle cx="0" cy="30" r="9" fill="#2cb67d"/>
+  </g>
+</svg>
