@@ -8,9 +8,18 @@
       name="description"
       content="Explore the programmes and activities offered by Help Me Up to support Grade 12 learners in accessing education and opportunity."
     />
+    <meta name="keywords" content="matric support programmes, career guidance, bursary assistance, school outreach, volunteer opportunities" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a467f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Help Me Up" />
+    <meta property="og:description" content="Explore the programmes and activities offered by Help Me Up to support Grade 12 learners in accessing education and opportunity." />
+    <meta property="og:title" content="Projects | Help Me Up" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="projects">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="topbar">
         <div class="container">
@@ -38,7 +47,7 @@
         <nav id="main-nav" class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
-          <a href="projects.html" class="active">Projects</a>
+          <a href="projects.html" class="active" aria-current="page">Projects</a>
           <a href="enquiry.html">Enquiry</a>
           <a href="contact.html">Contact</a>
         </nav>
@@ -50,7 +59,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="page-banner">
         <div class="container">
           <h1>Our Programmes & Projects</h1>
@@ -58,63 +67,35 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section programmes-section" aria-labelledby="programmes-title">
         <div class="container">
-          <!-- Visually-hidden heading: keeps the h1 -> h2 -> h3 hierarchy
-               intact for screen readers and document outline tools, since
-               the banner h1 above is followed directly by article h3s. -->
-          <h2 class="sr-only">Our programmes</h2>
-          <div class="project-grid">
-          <article class="project-card">
-            <h3>University & College Guidance</h3>
-            <p>
-              We explain what different institutions offer and help learners choose the right
-              options for their interests.
-            </p>
-            <ul>
-              <li>Information about applications and requirements</li>
-              <li>Simple comparisons to help choose a path</li>
-              <li>Practical tips for getting started</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <h3>Bursary & Scholarship Support</h3>
-            <p>
-              We point learners to funding opportunities and explain the application basics so
-              they can apply with confidence.
-            </p>
-            <ul>
-              <li>Lists of common bursaries and deadlines</li>
-              <li>Help with application documents</li>
-              <li>Advice on budgeting and affordability</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <h3>Career Readiness</h3>
-            <p>
-              Short workshops and activities to help learners explore careers and set practical goals.
-            </p>
-            <ul>
-              <li>Career exploration sessions</li>
-              <li>Goal setting and next-step planning</li>
-              <li>Basic life skills for study and work</li>
-            </ul>
-          </article>
-
-          <article class="project-card">
-            <h3>School Partnerships</h3>
-            <p>
-              We work with schools to bring information and sessions directly to learners who need them.
-            </p>
-            <ul>
-              <li>Workshops and school visits</li>
-              <li>Community outreach</li>
-              <li>Cooperation with local education partners</li>
-            </ul>
-          </article>
-        </div>
+          <div class="section-header">
+            <span class="eyebrow">Find a programme</span>
+            <h2 id="programmes-title">Explore education and outreach support</h2>
+            <p>Search programmes, filter by audience, and sort the results. The list is built dynamically with JavaScript.</p>
+          </div>
+          <div class="resource-toolbar">
+            <div class="filter-field">
+              <label for="programme-search">Search programmes</label>
+              <input id="programme-search" type="search" placeholder="Try bursary, careers or workshop" autocomplete="off" />
+            </div>
+            <div class="filter-field filter-sort">
+              <label for="programme-sort">Sort by</label>
+              <select id="programme-sort"><option value="default">Recommended order</option><option value="az">Name: A to Z</option><option value="za">Name: Z to A</option></select>
+            </div>
+          </div>
+          <div class="filter-tabs" role="group" aria-label="Filter programmes by audience">
+            <button class="filter-tab is-selected" type="button" data-category="all" aria-pressed="true">All programmes</button>
+            <button class="filter-tab" type="button" data-category="learners" aria-pressed="false">For learners</button>
+            <button class="filter-tab" type="button" data-category="schools" aria-pressed="false">For schools</button>
+            <button class="filter-tab" type="button" data-category="supporters" aria-pressed="false">For supporters</button>
+          </div>
+          <p id="results-summary" class="results-summary" aria-live="polite"></p>
+          <div class="project-grid dynamic-project-grid" id="programme-grid" aria-live="off">
+            <!-- Populated with accessible programme cards from programmes.js -->
+          </div>
+          <p id="results-empty" class="empty-state" hidden>No programmes match that search. Try another keyword or select All programmes.</p>
+          <noscript><p class="empty-state">Enable JavaScript to search and filter programmes. You can still <a href="enquiry.html">send an enquiry</a> for help with study guidance, bursaries, school workshops or volunteering.</p></noscript>
         </div>
       </section>
 
@@ -190,6 +171,7 @@
       </div>
     </footer>
 
+    <script src="programmes.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

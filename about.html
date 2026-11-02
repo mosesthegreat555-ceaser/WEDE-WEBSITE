@@ -8,9 +8,18 @@
       name="description"
       content="Learn about the purpose, history, and mission of Help Me Up in helping Grade 12 learners prepare for life after school."
     />
+    <meta name="keywords" content="Help Me Up NGO, education support, matric learners, South African youth, volunteer education" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a467f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Help Me Up" />
+    <meta property="og:description" content="Learn about the purpose, history, and mission of Help Me Up in helping Grade 12 learners prepare for life after school." />
+    <meta property="og:title" content="About Us | Help Me Up" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="about">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="topbar">
         <div class="container">
@@ -37,7 +46,7 @@
 
         <nav id="main-nav" class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="about.html" class="active">About Us</a>
+          <a href="about.html" class="active" aria-current="page">About Us</a>
           <a href="projects.html">Projects</a>
           <a href="enquiry.html">Enquiry</a>
           <a href="contact.html">Contact</a>
@@ -50,7 +59,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="page-banner">
         <div class="container">
           <h1>About Help Me Up</h1>
@@ -164,6 +173,31 @@
           </div>
         </div>
       </section>
+
+      <section class="section gallery-section" aria-labelledby="gallery-title">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Our community in focus</span>
+            <h2 id="gallery-title">Education in action</h2>
+            <p>Browse original illustrations representing the support we give. Select an image to view it in a larger lightbox.</p>
+          </div>
+          <div class="gallery-grid" id="gallery-grid">
+            <button class="gallery-tile" type="button" data-full="images/illustration-graduation.svg" data-caption="Celebrating study achievements" aria-label="Enlarge illustration of a graduate"><img src="images/illustration-graduation.svg" loading="lazy" width="380" height="270" alt="Graduate holding a certificate next to an open book"/><span>Study achievements <span aria-hidden="true">↗</span></span></button>
+            <button class="gallery-tile" type="button" data-full="images/illustration-study.svg" data-caption="Making study plans" aria-label="Enlarge illustration of a learner studying"><img src="images/illustration-study.svg" loading="lazy" width="380" height="270" alt="Student studying with books and a laptop"/><span>Study planning <span aria-hidden="true">↗</span></span></button>
+            <button class="gallery-tile" type="button" data-full="images/illustration-support.svg" data-caption="Supporting one another" aria-label="Enlarge illustration of hands helping"><img src="images/illustration-support.svg" loading="lazy" width="380" height="270" alt="Two hands reaching to offer support"/><span>Community support <span aria-hidden="true">↗</span></span></button>
+            <button class="gallery-tile" type="button" data-full="images/illustration-pathways.svg" data-caption="Discovering study and career pathways" aria-label="Enlarge illustration of education pathways"><img src="images/illustration-pathways.svg" loading="lazy" width="380" height="270" alt="Illustration of signs pointing to college, university and careers"/><span>Future pathways <span aria-hidden="true">↗</span></span></button>
+            <button class="gallery-tile" type="button" data-full="images/illustration-books.svg" data-caption="Access to learning materials" aria-label="Enlarge illustration of learning books"><img src="images/illustration-books.svg" loading="lazy" width="380" height="270" alt="Illustration of books stacked beside a pencil"/><span>Learning resources <span aria-hidden="true">↗</span></span></button>
+            <button class="gallery-tile" type="button" data-full="images/illustration-community.svg" data-caption="Working together for brighter futures" aria-label="Enlarge illustration of a learning community"><img src="images/illustration-community.svg" loading="lazy" width="380" height="270" alt="Illustration of three people together around a graduation cap"/><span>School community <span aria-hidden="true">↗</span></span></button>
+          </div>
+        </div>
+      </section>
+      <dialog id="gallery-lightbox" class="lightbox" aria-label="Expanded gallery image">
+        <div class="lightbox-inner">
+          <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close large image">×</button>
+          <img id="lightbox-image" src="images/illustration-graduation.svg" alt="" width="720" height="490" />
+          <div class="lightbox-controls"><button type="button" id="lightbox-prev" class="btn btn-secondary" aria-label="Previous gallery image">← Previous</button><p id="lightbox-caption"></p><button type="button" id="lightbox-next" class="btn btn-secondary" aria-label="Next gallery image">Next →</button></div>
+        </div>
+      </dialog>
     </main>
 
     <footer class="site-footer">

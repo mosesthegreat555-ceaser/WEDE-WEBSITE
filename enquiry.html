@@ -8,9 +8,18 @@
       name="description"
       content="Send an enquiry to Help Me Up. Tell us how we can help learners prepare for life after Grade 12."
     />
+    <meta name="keywords" content="study support enquiry, HMU volunteer, school workshop enquiry, bursary guidance, Grade 12 help" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a467f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Help Me Up" />
+    <meta property="og:description" content="Send an enquiry to Help Me Up. Tell us how we can help learners prepare for life after Grade 12." />
+    <meta property="og:title" content="Enquiry | Help Me Up" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="enquiry">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="topbar">
         <div class="container">
@@ -39,7 +48,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">About Us</a>
           <a href="projects.html">Projects</a>
-          <a href="enquiry.html" class="active">Enquiry</a>
+          <a href="enquiry.html" class="active" aria-current="page">Enquiry</a>
           <a href="contact.html">Contact</a>
         </nav>
 
@@ -50,42 +59,44 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="page-banner">
         <div class="container">
           <h1>Send an enquiry</h1>
-          <p>Tell us who you are and what you'd like help with — we'll get back soon.</p>
+          <p>Tell us what you need and receive useful guidance straight away.</p>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <!-- Enquiry form: required fields are validated natively by the
-               browser (via the `required`/`type="email"` attributes) and
-               again in script.js on submit, which stops the real page
-               submission and shows a confirmation message instead, since
-               there is no backend to send this data to yet. -->
-          <form id="enquiry-form" class="form">
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-
-            <label for="role">I am a</label>
-            <select id="role" name="role">
-              <option>Student</option>
-              <option>Parent or Guardian</option>
-              <option>Teacher</option>
-              <option>Partner or Supporter</option>
-            </select>
-
-            <label for="message">Your message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-
-            <div id="form-message" class="form-message" aria-live="polite"></div>
-
-            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+      <section class="section" aria-labelledby="enquiry-title">
+        <div class="container enquiry-layout">
+          <div>
+            <span class="eyebrow">Tell us what you need</span>
+            <h2 id="enquiry-title">Find the right support</h2>
+            <p>Choose the kind of assistance you need. After checking your details, we will show a helpful response and next steps.</p>
+            <div class="info-box tips-panel">
+              <h3>What happens next?</h3>
+              <ul class="list">
+                <li><span class="check" aria-hidden="true"></span> Select an enquiry category.</li>
+                <li><span class="check" aria-hidden="true"></span> Describe your request and check the required fields.</li>
+                <li><span class="check" aria-hidden="true"></span> Read your personalised guidance result.</li>
+                <li><span class="check" aria-hidden="true"></span> On Netlify, the form can also send your enquiry to the HMU dashboard.</li>
+              </ul>
+              <p class="form-note">There is no charge for general information enquiries. Activity dates and places require confirmation.</p>
+            </div>
+          </div>
+          <form id="enquiry-form" name="hmu-enquiry" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="/" class="form form-card" novalidate>
+            <input type="hidden" name="form-name" value="hmu-enquiry" />
+            <p class="honeypot"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <div class="form-group"><label for="enquiry-name">Full name <span class="required">*</span></label><input id="enquiry-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="80" required aria-describedby="enquiry-name-error"/><small class="field-error" id="enquiry-name-error"></small></div>
+            <div class="form-group"><label for="enquiry-email">Email address <span class="required">*</span></label><input id="enquiry-email" name="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="enquiry-email-error"/><small class="field-error" id="enquiry-email-error"></small></div>
+            <div class="form-group"><label for="enquiry-role">I am a <span class="required">*</span></label><select id="enquiry-role" name="role" required aria-describedby="enquiry-role-error"><option value="">Select a role</option><option>Grade 12 learner</option><option>Parent or guardian</option><option>Teacher or school representative</option><option>Partner or supporter</option></select><small class="field-error" id="enquiry-role-error"></small></div>
+            <div class="form-group"><label for="enquiry-topic">What do you need help with? <span class="required">*</span></label><select id="enquiry-topic" name="topic" required aria-describedby="enquiry-topic-error"><option value="">Choose an enquiry type</option><option value="study">University and college guidance</option><option value="funding">Bursary or scholarship support</option><option value="workshop">School workshop</option><option value="volunteer">Volunteering</option><option value="partner">Partnership or sponsorship</option><option value="other">Other enquiry</option></select><small class="field-error" id="enquiry-topic-error"></small></div>
+            <div class="form-group" id="school-field" hidden><label for="enquiry-school">School or organisation name <span class="required">*</span></label><input id="enquiry-school" name="school" type="text" maxlength="100" aria-describedby="enquiry-school-error"/><small class="field-error" id="enquiry-school-error"></small></div>
+            <div class="form-group"><label for="enquiry-message">Tell us more <span class="required">*</span></label><textarea id="enquiry-message" name="message" rows="5" minlength="15" maxlength="1500" placeholder="What would you like to know?" required aria-describedby="enquiry-message-error"></textarea><small class="field-error" id="enquiry-message-error"></small></div>
+            <p class="form-note">Fields marked * are required. Please avoid sharing sensitive documents or identity numbers in your message.</p>
+            <div id="enquiry-status" class="form-status" role="status" aria-live="polite"></div>
+            <button type="submit" class="btn btn-primary submit-btn">Get my enquiry response</button>
+            <div id="enquiry-result" class="enquiry-result" tabindex="-1" hidden></div>
           </form>
         </div>
       </section>

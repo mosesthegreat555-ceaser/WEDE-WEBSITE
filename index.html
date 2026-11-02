@@ -8,9 +8,18 @@
       name="description"
       content="Help Me Up helps Grade 12 learners discover universities, colleges, bursaries, and life-after-school opportunities in South Africa."
     />
+    <meta name="keywords" content="Grade 12 support, study opportunities, bursaries South Africa, Help Me Up, post-matric guidance" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a467f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Help Me Up" />
+    <meta property="og:description" content="Help Me Up helps Grade 12 learners discover universities, colleges, bursaries, and life-after-school opportunities in South Africa." />
+    <meta property="og:title" content="Help Me Up | Grade 12 Support &amp; Opportunities" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="index">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
       <div class="topbar">
         <div class="container">
@@ -40,7 +49,7 @@
         </button>
 
         <nav id="main-nav" class="nav-links" aria-label="Main navigation">
-          <a href="index.html" class="active">Home</a>
+          <a href="index.html" class="active" aria-current="page">Home</a>
           <a href="about.html">About Us</a>
           <a href="projects.html">Projects</a>
           <a href="enquiry.html">Enquiry</a>
@@ -54,7 +63,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
         <div class="container hero-content">
           <div>
@@ -192,6 +201,31 @@
               <p>
                 Learn how to volunteer, donate, or support programmes that open doors for young people.
               </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessible accordion: JavaScript sets aria-expanded and hides inactive answers. -->
+      <section class="section faq-section" aria-labelledby="faq-title">
+        <div class="container narrow-container">
+          <div class="section-header">
+            <span class="eyebrow">Helpful answers</span>
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <p>Find quick answers before sending a personal enquiry.</p>
+          </div>
+          <div class="accordion" id="faq-accordion">
+            <article class="accordion-item">
+              <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">Is learner support free?<span aria-hidden="true" class="accordion-icon">+</span></button></h3>
+              <div id="faq-answer-1" class="accordion-panel" role="region" aria-labelledby="faq-question-1" hidden><p>Our information and guidance enquiries are free. Workshops or partner activities may need separate planning; please enquire for availability.</p></div>
+            </article>
+            <article class="accordion-item">
+              <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">Can a school request a workshop?<span aria-hidden="true" class="accordion-icon">+</span></button></h3>
+              <div id="faq-answer-2" class="accordion-panel" role="region" aria-labelledby="faq-question-2" hidden><p>Yes. Select “School workshop” on the enquiry page and tell us the school, preferred date and number of learners. Availability must be confirmed by the team.</p></div>
+            </article>
+            <article class="accordion-item">
+              <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">How do I volunteer?<span aria-hidden="true" class="accordion-icon">+</span></button></h3>
+              <div id="faq-answer-3" class="accordion-panel" role="region" aria-labelledby="faq-question-3" hidden><p>Open the enquiry form, choose “Volunteer” and describe what you would like to help with. The team can then explain available opportunities.</p></div>
             </article>
           </div>
         </div>
