@@ -131,7 +131,7 @@ If your local project isn't a clone yet, initialise Git or copy these files into
 - Response and error states for form submission; CSP and other HTTP response headers for Netlify deployment.
 - Responsive styles, animations with reduced-motion support, focus indicators, image lazy loading, Netlify configuration and updated documentation.
 
-# [Part 2] — 2026-09-16 (preserved from uploaded project)
+# [Part 2]
 
 - Added original SVG graphics: `illustration-graduation.svg`, `illustration-study.svg` and `illustration-support.svg`, with descriptive alt text.
 - Added source comments and adjusted heading order on Projects and Contact.
