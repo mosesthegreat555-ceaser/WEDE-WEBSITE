@@ -105,9 +105,6 @@ feat: add enquiry guidance and contact validation
 feat: add Netlify AJAX forms and email fallback
 docs: add detailed changelog, SEO assets and references
 ```
-
-If your local project isn't a clone yet, initialise Git or copy these files into the proper existing repository, then commit and push. Submit **your actual GitHub repository URL and actual live Netlify URL** to the LMS.
-
 # 7. Changelog (most recent first)
 
 # [Part 3] — 2026-10-29
