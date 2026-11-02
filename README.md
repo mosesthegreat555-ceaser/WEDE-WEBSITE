@@ -1,4 +1,4 @@
-# Help Me Up (HMU) — Part 3 Final POE Website
+# Help Me Up (HMU) 
 
 *Module:* WEDE5020 — Web Development  
 *Course:* Higher Certificate in Mobile Application and Web Development  
