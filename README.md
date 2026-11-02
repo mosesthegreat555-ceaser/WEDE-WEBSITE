@@ -131,12 +131,6 @@ If your local project isn't a clone yet, initialise Git or copy these files into
 - Response and error states for form submission; CSP and other HTTP response headers for Netlify deployment.
 - Responsive styles, animations with reduced-motion support, focus indicators, image lazy loading, Netlify configuration and updated documentation.
 
-*Required manual follow-up before final submission*
-- *Actual Part 2 lecturer feedback was not included with the uploaded ZIP or screenshots.* This changelog accurately records the changes made, but any additional corrections explicitly required by the lecturer must be added after reading their feedback; do not describe these as lecturer-requested changes without evidence.
-- Set the real deployed URL in canonical URLs, sitemap and robots using `configure_site.py`.
-- Enable and test Netlify form detection and email notifications if needed.
-- Publish and test, commit several descriptive Git changes, and include both public URLs in your LMS submission.
-
 # [Part 2] — 2026-09-16 (preserved from uploaded project)
 
 - Added original SVG graphics: `illustration-graduation.svg`, `illustration-study.svg` and `illustration-support.svg`, with descriptive alt text.
