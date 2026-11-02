@@ -1,220 +1,198 @@
-# WEDE-WEBSITE
-# Help Me Up (HMU) — Non-Profit Organisation Website
+# Help Me Up (HMU) — Part 3 Final POE Website
 
-Student: Lethabo Mmako
-Student Number: ST10533051
-Module: WEDE5020 — Web Development
-Programme: Higher Certificate in Mobile Application and Web Development
-Institution: The IIE — Rosebank College
-Repository: https://github.com/mosesthegreat555-ceaser/WEDE-WEBSITE
+*Module:* WEDE5020 — Web Development  
+*Course:* Higher Certificate in Mobile Application and Web Development  
+*Institution:* IIE Rosebank College  
+*Original Part 2 author information (retained from uploaded project):* Lethabo Mmako — ST10533051  
+*Project:* Help Me Up — Grade 12 learner guidance NGO  
+*Version:* Part 3 — 29 October 2026  
+*Original repository noted in Part 2:* https://github.com/mosesthegreat555-ceaser/assignment-step-1  
+**Live website:** — add the actual public URL after publishing.
 
----
+# 1. Project overview
 
-# Project Overview
+Help Me Up (HMU) is a South African non-profit website concept supporting Grade 12 learners as they make decisions about universities, colleges, bursaries, careers and opportunities after matric. The Part 3 upgrade builds directly on the uploaded Part 2 HTML/CSS website and preserves its blue/green look, brand, site structure and educational mission.
 
-This repository contains the website developed for Help Me Up (HMU), a South African
-non-profit organisation that helps Grade 12 learners prepare for life after school. HMU makes
-information about universities, colleges, bursaries and other opportunities easier to find,
-particularly for learners who don't have easy access to it.
+**Audience:** learners, parents, schools, volunteers and supporters. The website is designed to offer information, searchable programme descriptions, enquiry assistance and contact routes. The illustrations are original project SVG assets. Programme content is descriptive and does not guarantee funding, acceptance, workshop availability or individual services.
 
-The site was built as part of the WEDE5020 module, Part 1: static HTML/CSS pages with light
-JavaScript interactivity, no backend or build tools.
+# 2. Website pages
 
-# Target Audience
+| Page | Filename | Purpose / key features |
+| --- | --- | --- |
+| Home | `index.html` | Welcome, educational goals, calls to action, interactive FAQ accordion |
+| About | `about.html` | NGO story, values, timeline, six-image original artwork gallery and keyboard-accessible lightbox |
+| Programmes | `projects.html` | Eight JavaScript-generated programme entries, keyword search, audience filter buttons, A–Z/Z–A sorting |
+| Enquiry | `enquiry.html` | Typed enquiry, conditional school name, validation, personalised cost/availability/next-steps response, Netlify asynchronous submission |
+| Contact | `contact.html` | Existing business details, separate general-message form, asynchronous delivery on Netlify or email-draft fallback, Leaflet/OSM interactive map |
 
-| Audience | What they need from the site |
-|---|---|
-| Grade 12 learners | Information on tertiary study, bursaries and applications |
-| Parents and guardians | An understanding of what support is available to their child |
-| Schools | A way to enquire about HMU school visits and workshops |
-| Volunteers and donors | Information on how to get involved or support HMU |
+# 3. Part 3 assessment requirement coverage
 
----
+| Rubric criterion | Where it is demonstrated | Test it by... |
+| --- | --- | --- |
+| Interactive elements | Home accordion, project filter buttons, gallery modal | Open/close FAQ, filter programmes, enlarge photos |
+| Interactive map | Contact page Leaflet map with marker, popup, circle, zoom, OSM attribution | Open Contact with an internet connection |
+| Gallery lightbox | About page `dialog` | Click a gallery image, use Next/Previous, Escape or Close |
+| Dynamic content and search | `programmes.js` and Projects page | Search “bursary”; select Schools; sort A–Z |
+| SEO titles | Unique `<title>` on every page | Inspect each HTML `<head>` |
+| Meta keywords | `<meta name="keywords">` on every page | Inspect each HTML `<head>` (included for rubric; not a modern ranking factor) |
+| Meta descriptions | Unique descriptive summaries on all pages | Inspect each HTML `<head>` |
+| Image SEO | Clear image paths and specific alt text for meaningful illustrations | Inspect About image elements |
+| Mobile layout | Original mobile header + new gallery, map and form breakpoints | Test at 375px, 768px and desktop |
+| Enquiry controls | Enquiry page name, email, role, enquiry type, optional school, message | Complete the form |
+| Enquiry validation | `script.js` per-field error messages, required selection, valid email and minimum lengths | Enter blank/incorrect values |
+| Enquiry process and response | `topicAdvice` lookup in `script.js` | Choose a type and get personalised guidance |
+| Contact controls | Contact form name, email, message type, subject, full message | Enter all fields |
+| Contact validation | `script.js` per-field error messages | Submit an invalid message |
+| Contact processing/email | Netlify Forms AJAX or composed `mailto:` email link | Deploy to Netlify; otherwise open prepared email |
+| Version control | Git commands below; not yet pushed by this ZIP | Commit and push to own repo |
+| README and changelog | This `README.md` | Review Section 7 |
+| Deployment | `netlify.toml` and deploy walkthrough | Publish using Netlify |
+| Robots and sitemap | `robots.txt`, `sitemap.xml`, SEO configuration script | Update the live domain after deployment |
+| Security | No insertion of user-entered HTML, field limits, honeypot, HTTPS hosting, Netlify `_headers` | Inspect `script.js`, form markup, `_headers` |
+| Page speed | SVG local artwork, no JS framework, lazy-loaded gallery images | Run Lighthouse on final deployed URL |
 
-# Website Goals and Objectives
+## 4. How to open in Visual Studio Code (Windows)
 
-The site aims to:
+1. Extract the full ZIP to a folder, such as `Documents\WEDE_Part_3_HMU`.
+2. Open **Visual Studio Code** and choose **File → Open Folder**. Select the folder containing `index.html`.
+3. Install the optional **Live Server** extension, right-click `index.html`, and choose **Open with Live Server**. The site normally opens at `http://127.0.0.1:5500/`.
+4. Navigate through all five pages. For map tiles and the Leaflet library, keep internet connected.
+5. No `npm install` or build command is required. HTML, CSS and JavaScript are editable directly.
 
-- Provide information about tertiary education opportunities.
-- Share information about bursaries and scholarships.
-- Explain the programmes and projects offered by HMU.
-- Raise awareness of the organisation.
-- Allow schools and learners to submit enquiries.
-- Give visitors information about volunteering and supporting HMU.
+*Important about forms:* Browser preview and Live Server *do not send enquiries to the organisation*. Enquiry validates locally and displays a clearly labelled preview response. Contact validates and prepares an email the visitor must send from their email application. This avoids falsely claiming that an email was sent.
 
-Success will be measured by the number of website visits, the number of enquiries submitted,
-views of the resource pages, and the number of people making contact with HMU.
+# 5. How to deploy on Netlify for AJAX forms
 
+Netlify is recommended because the project uses static HTML forms marked `data-netlify="true"`, with an AJAX `fetch` submission in `script.js`.
 
+1. Sign in to Netlify. Choose *Add new project / Deploy manually* (exact UI wording may vary) and drag in the extracted *website folder contents*, with `index.html` at its root. Alternatively connect your GitHub repository.
+2. Wait until Netlify finishes deploying; copy the actual `https://...netlify.app` URL.
+3. In Netlify, ensure *Forms / Form detection* is enabled, then redeploy if necessary. The two form names are `hmu-enquiry` and `hmu-contact`.
+4. Open the live page, fill both forms with test data and confirm the submissions appear in *Netlify → Forms*. A successful AJAX response reports receipt by Netlify's form service; it does *not* promise a staff member has read it.
+5. In Netlify's form notification settings, configure an email notification to the project's intended contact email if organisation email alerts are required. *A form saved in Netlify does not, by itself, send an email notification.* Verify that the email belongs to the organisation before enabling notifications.
+6. For custom domains not ending in `.netlify.app`, set `window.HMU_NETLIFY_FORMS = true` in a small script *before* `script.js` is loaded (only if the custom domain is actually deployed on Netlify).
+7. Run the SEO configurator with the real deployed HTTPS URL, commit the updated pages/SEO files and redeploy:
 
-
-# Navigation
-
-Every page shares identical header markup: a top info bar, the HMU logo/brand, a `<nav>` with
-links to all five pages, and two call-to-action buttons ("Get Help", "Contact Us"). Below 900px
-the nav collapses into a menu button (`.nav-toggle`), which `script.js` toggles open and closed
-and keeps in sync with `aria-expanded` for screen readers.
-
-The current page's link is highlighted automatically: each page's `<body>` carries a
-`data-page="…"` attribute, and `script.js` compares it against each nav link's `href` to add
-the `.active` class — so the same nav markup works unmodified on every page.
-
----
-
-# Design and User Experience
-
-# Colour Palette
-
-| Colour | Hex | Where it is used | Reason |
-|---|---|---|---|
-| Primary blue | `#0d5ea8` | Header accents, primary buttons, hero background | Professional and trustworthy appearance |
-| Dark blue | `#0a467f` | Top info bar, footer, gradient shading | Depth and contrast against the primary blue |
-| Secondary green | `#2cb67d` | Nav underline, check icons, accents | Represents growth and a fresh start |
-| Dark green | `#1d8e63` | Hover/active states on green elements | Consistent accent depth |
-| Light blue / light green | `#edf6ff` / `#ebfff5` | Section backgrounds, gradients | Keeps the palette soft without losing the brand colours |
-| White | `#ffffff` | Cards, page background, text on dark areas | Keeps the layout clean and readable |
-
-All colours are defined once as CSS custom properties in `:root` (e.g. `--primary-blue`,
-`--secondary-green`) so the whole site's palette can be changed by editing a single place in
-`styles.css`, rather than hunting for hex codes throughout the file.
-
-# Typography
-
-Body text uses a system font stack — `"Segoe UI", Arial, Helvetica, sans-serif` — chosen for
-fast loading (no external font request) and reliable, familiar rendering across devices, which
-matters for a younger audience reading on a range of phones and school computers. Headings use
-`clamp()` (e.g. `clamp(2rem, 4.5vw, 3.2rem)` for the hero heading) so font size scales smoothly
-with the viewport instead of jumping at fixed breakpoints.
-
-# Layout Decisions
-
-Content is broken into clearly separated `<section>`s so learners are never faced with a large
-unbroken block of text. Card grids (`.card-grid`, `.project-grid`, `.value-grid`) present
-related information in equal-sized chunks. Important actions — Get Help, Get Involved
-and Contact Us — use the `.btn-primary` / `.btn-secondary` styles so they stand out
-consistently on every page.
-
----
-
-# Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Semantic structure of all five pages (`header`, `nav`, `main`, `section`, `article`, `footer`, `address`) |
-| CSS3 | Layout, colour scheme, typography and spacing, in a single external stylesheet |
-| JavaScript | Active nav-link highlighting, mobile menu toggle, enquiry form validation, dynamic footer year |
-| Visual Studio Code | Code editor used for development |
-| Git and GitHub | Version control and change tracking |
-
-# CSS Approach
-
-All five pages link to one external stylesheet, `styles.css`, so the design stays consistent
-site-wide and only one file needs editing to change the whole site's look. The file is grouped
-into sections in this order: colour tokens (`:root` custom properties) → reset → header/nav →
-buttons → hero → page-specific sections (about, projects, contact, enquiry) → footer →
-responsive breakpoints — each grouping is marked with a comment.
-
-Specific techniques used, and why:
-
-- CSS custom properties (`--primary-blue`, `--shadow`, etc.) — a single source of truth for
-  colour and shadow values, instead of repeating hex codes across dozens of rules.
-- Flexbox — used for the navbar, button groups, and any row of items that needs to align
-  and space itself along one axis (e.g. `.nav-links`, `.hero-actions`).
-- CSS Grid — used for every card layout (`.card-grid`, `.project-grid`, `.value-grid`,
-  `.contact-grid`, `.footer-grid`) via `grid-template-columns: repeat(n, minmax(0, 1fr))`,
-  because these are two-dimensional layouts of equal-width items, which Grid handles more
-  directly than Flexbox.
-- `clamp()` on heading font sizes, so text scales fluidly between a minimum and maximum
-  size across viewport widths rather than needing a separate font-size rule per breakpoint.
-- `backdrop-filter: blur(10px)` on the sticky header, so page content remains legible as it
-  scrolls underneath a semi-transparent header bar.
-- Two media query breakpoints — `900px` (all grids collapse to one column; the nav becomes
-  a toggleable menu) and `540px` (the top info bar stacks; secondary nav buttons are hidden to
-  save space on small phones).
-
-No CSS framework (e.g. Bootstrap) or CSS preprocessor is used — every rule in `styles.css` was
-written directly for this project's HTML structure and class names.
-
-# JavaScript Approach
-
-`script.js` is loaded once at the bottom of every page's `<body>` and does four things, each
-documented inline: highlights the current page in the nav, toggles the mobile menu and its
-`aria-expanded` state, validates and "submits" the enquiry form (there is no backend yet, so a
-confirmation message is shown in its place after the browser's built-in validation passes), and
-writes the current year into the footer.
-
----
-
-# How to View the Website
-
-1. Clone the repository:
    ```bash
-   git clone https://github.com/mosesthegreat555-ceaser/WEDE-WEBSITE.git
+   python tools/configure_site.py https://YOUR-REAL-SITE.netlify.app
    ```
-2. Open the project folder in Visual Studio Code.
-3. Open `index.html` in a web browser, or use the Live Server extension in VS Code.
 
-No build tools, frameworks or server setup are required — the site is plain HTML, CSS and
-JavaScript.
+   The helper updates `robots.txt`, `sitemap.xml`, and page-specific canonical / social URLs. Replace the sample Netlify domain with the live site URL before publishing to production.
 
----
+8. Test the actual public site from phone and desktop, including link and image loading.
 
-# Changelog
+*Hosting limitation:* GitHub Pages can serve the content and map, but cannot handle these Netlify form POST requests. If deployed to GitHub Pages instead, the enquiry result stays a preview and contact requires the email-draft link or a separate functioning form backend. The code does not pretend otherwise.
 
-All notable changes to this project are recorded here, most recent first.
+# 6. GitHub repository and descriptive commits
 
-# [Unreleased] — 2026-09-16
-Added
-- Content images: three original SVG illustrations (`images/illustration-graduation.svg`,
-  `illustration-study.svg`, `illustration-support.svg`) used on the Home, About Us, Projects
-  and Contact pages, each with descriptive `alt` text.
-- Explanatory comments throughout every HTML file, `styles.css` and `script.js`.
-- `<h2>` headings above the card grids on `contact.html` and `projects.html` so the heading
-  order no longer skips from `<h1>` to `<h3>`.
-- `aria-expanded` and `aria-controls` on the mobile menu button, kept in sync by `script.js`.
+> The ZIP contains website files, not a live GitHub commit history. The original uploaded repository URL has *not* been modified or pushed by creating this ZIP.
 
-# Changed
-- Replaced every inline `style="…"` attribute across all five pages with named CSS classes
-  (`.footer-brand`, `.footer-tagline`, `.section-header.left-align`, `.stacked-heading`,
-  `.info-box .btn`) defined in `styles.css`, so styling is handled in one place instead of
-  being split between HTML and CSS.
-- Replaced the plain `<p>` address on `contact.html` with the semantic `<address>` element.
-- Standardised `<meta charset>` casing to `UTF-8` across all pages.
+From the website folder in the VS Code terminal, if upgrading an existing clone:
 
----
+```bash
+git status
+git add .
+git commit -m "feat: add searchable programme cards and accessible filters"
+git commit --allow-empty -m "docs: record Part 3 upgrades and deployment instructions" # optional if separated changes already committed
+git push origin main
+```
 
-# References
+Prefer several *real incremental commits as work is completed*, for example:
 
-Mozilla (2026) *CSS custom properties (--*)*. MDN Web Docs. Available at:
-https://developer.mozilla.org/en-US/docs/Web/CSS/--* (Accessed:16/09/2026).
+```text
+fix: improve heading order and navigation accessibility
+feat: add gallery lightbox and FAQ accordion
+feat: add interactive Johannesburg outreach map
+feat: add enquiry guidance and contact validation
+feat: add Netlify AJAX forms and email fallback
+docs: add detailed changelog, SEO assets and references
+```
 
-Mozilla (2026) *CSS Grid Layout*. MDN Web Docs. Available at:
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed:16/09/2026).
+If your local project isn't a clone yet, initialise Git or copy these files into the proper existing repository, then commit and push. Submit **your actual GitHub repository URL and actual live Netlify URL** to the LMS.
 
-Mozilla (2026) *clamp()*. MDN Web Docs. Available at:
-https://developer.mozilla.org/en-US/docs/Web/CSS/clamp (Accessed:16/09/2026).
+# 7. Changelog (most recent first)
 
-Mozilla (2026) *backdrop-filter*. MDN Web Docs. Available at:
-https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter (Accessed:16/09/2026).
+# [Part 3] — 2026-10-29
 
-Mozilla (2026) *ARIA: aria-expanded attribute*. MDN Web Docs. Available at:
-https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded
-(Accessed:16/09/2026).
+*Changed — Part 2 improvements made while upgrading*
+- Retained original five-page site structure, blue/green colour palette, images and mobile menu.
+- Improved navigation by adding `aria-current="page"`, consistent active-link logic, an accessible Skip to content link and Escape behaviour for the mobile menu.
+- Kept a clear heading structure and addressed existing UI issues such as the missing dedicated contact form.
+- Replaced the old enquiry-only visual confirmation (which said it was submitted although no backend existed) with honest preview vs actual submission states.
+- Added field labels, specific error messages, input limits, required indicators and instructions to avoid sensitive personal data.
+- Added safe DOM construction for user-driven rendering and improved keyboard interaction.
 
+*Added — Part 3 requirements*
+- FAQ accordion on Home with ARIA state management and keyboard-accessible native buttons.
+- Original SVG illustration gallery on About with native dialog lightbox, arrow navigation and Escape-to-close.
+- Eight programme cards generated from JavaScript data, searchable by keywords, audience filters and alphabetical sorting.
+- Leaflet interactive Johannesburg outreach area map with popup, zoom, OSM attribution and external map search. Map pin intentionally represents an approximate area, not a verified office location.
+- Separate enquiry form with conditional school input, meaningful client-side validation, personalised response by enquiry category and Netlify asynchronous POST.
+- Separate general-message contact form, field validation, Netlify asynchronous POST and fully composed email draft when no form backend is present.
+- Distinct page titles, descriptions, meta keywords, Open Graph tags, favicon, alt text, robots.txt, sitemap.xml and URL setup helper.
+- Response and error states for form submission; CSP and other HTTP response headers for Netlify deployment.
+- Responsive styles, animations with reduced-motion support, focus indicators, image lazy loading, Netlify configuration and updated documentation.
 
-# Image Credits
+*Required manual follow-up before final submission*
+- *Actual Part 2 lecturer feedback was not included with the uploaded ZIP or screenshots.* This changelog accurately records the changes made, but any additional corrections explicitly required by the lecturer must be added after reading their feedback; do not describe these as lecturer-requested changes without evidence.
+- Set the real deployed URL in canonical URLs, sitemap and robots using `configure_site.py`.
+- Enable and test Netlify form detection and email notifications if needed.
+- Publish and test, commit several descriptive Git changes, and include both public URLs in your LMS submission.
 
-| Image file | Source | Licence |
-|---|---|---|
-| `images/illustration-graduation.svg` | Original illustration created for this project | N/A — original work |
-| `images/illustration-study.svg` | Original illustration created for this project | N/A — original work |
-| `images/illustration-support.svg` | Original illustration created for this project | N/A — original work |
+# [Part 2] — 2026-09-16 (preserved from uploaded project)
 
+- Added original SVG graphics: `illustration-graduation.svg`, `illustration-study.svg` and `illustration-support.svg`, with descriptive alt text.
+- Added source comments and adjusted heading order on Projects and Contact.
+- Added menu `aria-expanded` and `aria-controls` and removed inline CSS in favour of named styles.
+- Used semantic `<address>` for contact information and standardised UTF-8 meta tags.
 
----
+# 8. Verification checklist
 
-# Author
+- [ ] Navigation works on all five pages and on a phone-width screen.
+- [ ] FAQ opens/closes with buttons, and Escape closes the mobile menu.
+- [ ] Gallery opens, arrow keys/Next/Previous work and Escape closes it.
+- [ ] Programme search finds *Bursary & Scholarship Support* for “bursary”.
+- [ ] Schools filter returns school programmes; sorting changes card order.
+- [ ] Empty search shows “No programmes match that search.”
+- [ ] Enquiry empty submit displays field errors; invalid email is rejected.
+- [ ] Choosing School workshop asks for school/organisation name.
+- [ ] Correct enquiry returns the relevant guidance, including a clear send status.
+- [ ] Contact invalid submit displays errors; local preview creates an email-draft link.
+- [ ] Map loads online with OSM attribution (CDN and tiles need internet).
+- [ ] After Netlify deployment both forms appear in the Netlify dashboard and submissions arrive.
+- [ ] SEO metadata is present, and `robots.txt`/`sitemap.xml` reflect the actual live domain.
+- [ ] Run Lighthouse and fix any real accessibility/performance issues found.
+- [ ] Commit all changes, confirm GitHub repository is public/accessible, submit live URL and repository link.
 
-Lethabo Mmako (ST10533051)
-Higher Certificate in Mobile Application and Web Development
-The IIE — Rosebank College
+# 9. Search optimisation strategy
+
+*Keyword research/topics:* HMU's audience is likely to search for phrases around “Grade 12 support”, “bursaries South Africa”, “university applications”, “college guidance”, “school workshops” and “youth volunteer programmes”. Page-specific keywords are used naturally in titles, descriptions, headings and content. Meta keyword tags are included for this course rubric even though major search engines do not rely on them for ranking.
+
+On-page SEO: semantic HTML and orderly H1/H2/H3, alt text, fast SVG images, natural internal links and direct descriptive `.html` filenames. Canonicals and XML sitemap should be configured only once the real URL is known.
+
+*Off-page SEO to do after publishing:* Share the actual public website through the organisation's verified social-media channels; request legitimate education/community partners to link to relevant project pages. Do not manufacture backlinks or claim these were already obtained. For local SEO, verify the real organisation address before submitting it to any public business directory; Part 2 contains an address, but it has not been independently validated here.
+
+**Security and performance:** static code, no client secrets, a honeypot for spam reduction, no raw insertion of user input into HTML, resource length limits, accessible feedback, Netlify-specific security headers, lazy SVG image loading and reduced-motion support. Client-side validation is for user experience, **not a replacement for backend validation**; Netlify or a future server must enforce its own checks and anti-spam controls.
+
+# 10. References 
+
+Leaflet (2026) *Leaflet downloads*. Available at: https://leafletjs.com/download (Accessed: 29 October 2026).
+
+Leaflet (2026) *Leaflet quick start guide*. Available at: https://leafletjs.com/examples/quick-start/ (Accessed: 29 October 2026).
+
+MDN Web Docs (n.d.) *Client-side form validation*. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation (Accessed: 29 October 2026).
+
+MDN Web Docs (n.d.) *HTMLDialogElement: showModal() method*. Available at: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal (Accessed: 29 October 2026).
+
+Netlify (2026) *Forms setup*. Available at: https://docs.netlify.com/manage/forms/setup/ (Accessed: 29 October 2026).
+
+OpenStreetMap (n.d.) *Copyright and license*. Available at: https://www.openstreetmap.org/copyright (Accessed: 29 October 2026).
+
+Google Search Central (n.d.) *Understand sitemaps*. Available at: https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview (Accessed: 29 October 2026).
+
+# 11. Image and library credits
+
+- Original illustrations from the submitted Part 2 project: `illustration-graduation.svg`, `illustration-study.svg`, `illustration-support.svg`.
+- New original illustrations for Part 3: `illustration-pathways.svg`, `illustration-books.svg`, `illustration-community.svg` and `favicon.svg`.
+- Interactive map: Leaflet (BSD-2-Clause) and © OpenStreetMap contributors (ODbL map data; map tiles and attribution subject to OSM usage terms).
+- No external stock photography was required.
